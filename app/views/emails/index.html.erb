@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1><U>Ajaxmails :</U></h1></br>
+
+<button type="button" class="btn btn-primary">Recevoir un email</button>
+</br>
+</br>
+
+<div class="card bg-light mb-3 text-center">
+<table>
+  <thead class="card-header">
+    <tr>
+      <th>Emails :</th>
+      <th>Emails selectionnés :</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class="card-body">
+    <% @emails.each do |email| %>
+      <tr>
+        <td><%= email.object %></td>
+        <td><%= %></td>
+        <td><%= link_to 'Show', email %></td>
+        <td><%= link_to 'Edit', edit_email_path(email) %></td>
+        <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Email', new_email_path %>
