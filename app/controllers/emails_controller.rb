@@ -24,15 +24,15 @@ class EmailsController < ApplicationController
   # POST /emails
   # POST /emails.json
   def create
-    @email = Email.new(email_params)
+    @email = Email.new(object: Faker::Cosmere.knight_radiant, body: Faker::ChuckNorris.fact)
 
     respond_to do |format|
       if @email.save
-        format.html { redirect_to @email, notice: 'Email was successfully created.' }
-        format.json { render :show, status: :created, location: @email }
+        format.html { redirect_to emails_path, notice: 'Email was successfully created.' }
+        format.js {}
       else
         format.html { render :new }
-        format.json { render json: @email.errors, status: :unprocessable_entity }
+        
       end
     end
   end

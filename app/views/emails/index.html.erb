@@ -2,7 +2,8 @@
 
 <h1><U>Ajaxmails :</U></h1></br>
 
-<button type="button" class="btn btn-primary">Recevoir un email</button>
+<%= link_to "Recevoir un email", emails_path, method: :post, class: "btn btn-primary", remote: true %>
+
 </br>
 </br>
 
@@ -16,11 +17,11 @@
     </tr>
   </thead>
 
-  <tbody class="card-body">
+  <tbody id="email" class="card-body">
     <% @emails.each do |email| %>
       <tr>
-        <td><%= email.object %></td>
-        <td><%= %></td>
+        <td><%= link_to "#{email.object}", email, remote: true %></td>
+        <td> </td>
         <td><%= link_to 'Show', email %></td>
         <td><%= link_to 'Edit', edit_email_path(email) %></td>
         <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
