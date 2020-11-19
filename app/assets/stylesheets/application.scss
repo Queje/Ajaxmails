@@ -63,3 +63,13 @@ tasks
 .statusTrue{
   text-decoration: line-through;
 }
+
+/******************************
+show js card
+******************************/
+
+.showcard {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}

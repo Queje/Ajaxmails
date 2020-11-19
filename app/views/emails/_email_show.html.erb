@@ -1,0 +1,6 @@
+<div class="card">
+    <h2 class="card-header"><%= @email.object %></h2> </br>
+    <%= @email.body %> </br>
+    <%= link_to "Supprimer", email, method: :delete, class: "btn btn-danger"%>
+    <%= link_to "Marquer non-lu", email, method: :post, class: "btn btn-secondary"%>
+<div>
