@@ -17,7 +17,7 @@
     </tr>
   </thead>
 
-  <tbody id="email" class="card-body">
+  <tbody id="emaillist" class="card-body">
     <% @emails.each do |email| %>
       <tr>
         <td><%= link_to "#{email.object}", email_path(email), id: "toclick", remote: true%></td>
