@@ -20,7 +20,7 @@
   <tbody id="email" class="card-body">
     <% @emails.each do |email| %>
       <tr>
-        <td><%= link_to "#{email.object}", email_path(email), remote: true %></td>
+        <td><%= link_to "#{email.object}", email_path(email), id: "toclick", remote: true%></td>
     <% end %>
         <td class="showcard" id = "email_show"></td>
       </tr>

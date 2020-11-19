@@ -9,7 +9,7 @@
 require 'faker'
 
 10.times do 
-  Email.create(object: Faker::Cosmere.knight_radiant, body: Faker::ChuckNorris.fact)
+  Email.create(object: Faker::Cosmere.knight_radiant, body: Faker::ChuckNorris.fact, read: false)
 end
 
 puts "seeding db"

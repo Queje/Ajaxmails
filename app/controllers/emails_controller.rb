@@ -29,7 +29,7 @@ class EmailsController < ApplicationController
   # POST /emails
   # POST /emails.json
   def create
-    @email = Email.new(object: Faker::Cosmere.knight_radiant, body: Faker::ChuckNorris.fact)
+    @email = Email.new(object: Faker::Cosmere.knight_radiant, body: Faker::ChuckNorris.fact, read: false)
 
     respond_to do |format|
       if @email.save
@@ -47,11 +47,10 @@ class EmailsController < ApplicationController
   def update
     respond_to do |format|
       if @email.update(email_params)
-        format.html { redirect_to @email, notice: 'Email was successfully updated.' }
-        format.json { render :show, status: :ok, location: @email }
+        format.html {redirect_to @email, notice: 'Email was successfully updated.' }
+        format.js {}
       else
         format.html { render :edit }
-        format.json { render json: @email.errors, status: :unprocessable_entity }
       end
     end
   end
