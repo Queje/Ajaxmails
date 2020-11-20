@@ -29,16 +29,11 @@ class EmailsController < ApplicationController
   # POST /emails
   # POST /emails.json
   def create
-    @email = Email.new(object: Faker::Cosmere.knight_radiant, body: Faker::ChuckNorris.fact, read: false)
+    @email = Email.create(object: Faker::Cosmere.knight_radiant, body: Faker::ChuckNorris.fact, read: false)
 
     respond_to do |format|
-      if @email.save
-        format.html {redirect_to emails_path, notice: 'Email was successfully created.' }
-        format.js {}
-      else
-        format.html { render :new }
-        
-      end
+      format.html {redirect_to emails_path}
+      format.js {}
     end
   end
 
